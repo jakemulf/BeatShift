@@ -7,9 +7,6 @@ Created by Jacob Mulford on 2/18/2015
 
 Based on https://github.com/echonest/remix/blob/master/examples/stretch/simple_stretch.py
 """
-import math
-import os
-import sys
 import dirac
 from echonest.remix import audio
 from pyechonest import track

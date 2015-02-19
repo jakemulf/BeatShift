@@ -20,20 +20,12 @@ Usage: python beatshift.py <input_filename> <start_beat> <shift_length> <shift_m
 Example: python beatshift.py CallMeMaybe.mp3 10 50 -10 CallMeShift.mp3
 
 This will shift the tempo of CallMeMaybe.mp3 by -10 bpm over 50 beats starting at beat 10.
-
-This program will not run if the magnitude of the shift is +/- 8% of the default beat.
 """
 
 def main(input_filename, start_beat, shift_length, shift_magnitude, output_filename):
     t = track.track_from_filename(input_filename)
-    difference = abs(shift_magnitude)
-    average = (t.tempo + (shift_magnitude * 0.5))
 
-#    if (difference*1.0/average > 0.08):
- #       print "Error: magnitude of the shift is greater than +/- 8% of the default beat."
-  #      sys.exit(-1)
-
-    beat_ratio_base = (1.0*shift_magnitude/shift_length)/t.tempo
+    beat_increment = (1.0*shift_magnitude)/shift_length
     beat_ratio = 1.0
     beat_count = 0
 
@@ -45,7 +37,7 @@ def main(input_filename, start_beat, shift_length, shift_magnitude, output_filen
 
     for beat in beats:
         if (beat_count > start_beat and beat_count <= shift_length + start_beat):
-            desired_bpm = ((1.0*beat_count - start_beat)/(shift_length))*shift_magnitude + t.tempo
+            desired_bpm = beat_increment * (beat_count - start_beat) + t.tempo
             print desired_bpm
             beat_ratio = t.tempo/desired_bpm
 

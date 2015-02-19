@@ -1,7 +1,8 @@
-#Purpose
+#beatshift.py
 
-To create a program that can gradually shift the beats of a song while it is playing
+Gradually changes the tempo of a song by a given amount starting at a given index over a given peroid of beats.
 
-#Sources
+Usage: python beatshift.py <input_filename> <start_beat> <shift_length> <shift_magnitude> <output_filename>
 
-TODO: add sources
+###Process
+

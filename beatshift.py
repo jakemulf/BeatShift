@@ -30,12 +30,9 @@ def main(input_filename, start_beat, shift_length, shift_magnitude, output_filen
     beats = audiofile.analysis.beats
     collect = []
 
-    print t.tempo
-
     for beat in beats:
         if (beat_count > start_beat and beat_count <= shift_length + start_beat):
             desired_bpm = beat_increment * (beat_count - start_beat) + t.tempo
-            print desired_bpm
             beat_ratio = t.tempo/desired_bpm
 
 

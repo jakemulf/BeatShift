@@ -2,7 +2,7 @@
 
 Gradually changes the tempo of a song by a given amount starting at a given index over a given peroid of beats.
 
-Usage: python beatshift.py <input_filename> <start_beat> <shift_length> <shift_magnitude> <output_filename>
+Usage: python beatshift.py input_filename start_beat shift_length shift_magnitude output_filename
 
 Dependencies: dirac, echonest.remix.audio, pyechonest.track
 
@@ -20,7 +20,7 @@ For each beat, the value is stretched by the given ratio.  Until the beginning o
 
 Gradually changes the tempo of a song over a given period of beats to match the tempo of another song.  After the shift the 2nd song will be played starting at a given beat.
 
-Usage: python songmix.py <first_filename> <second_filename> <start_beat> <shift_length> <second_start> <output_file>
+Usage: python songmix.py first_filename second_filename start_beat shift_length second_start output_file
 
 Dependencies: dirac, echonest.remix.audio, pyechonest.track
 

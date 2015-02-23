@@ -1,3 +1,11 @@
+#Problem to solve
+
+These 2 scripts attempt to remove a dependency on the tempo of a song in order to create a reasonable shift between 2 songs.  In previously written software, like the infinite jukebox (infinitejuke.com), the duration of segments is very heavily weighted in determining if a transition should occur.  These scripts remove tempo dependencies by shifting the tempo of a song by a given amount, and by shifting the tempo of one song to match the tempo of another song.
+
+#Inspiration
+
+I am currently taking a CS class named Music Informatics.  We have been studying the Echonest API and looking at software built using this API.  One day in class we got into groups and discussed project ideas.  My group talked about making a project that would continually transition between a group of songs, and the issue of tempo transitions was brought up.  This was where I got the idea to make a script to gradually shift the tempo of a song over a given period of time.
+
 #beatshift.py
 
 Gradually changes the tempo of a song by a given amount starting at a given index over a given peroid of beats.

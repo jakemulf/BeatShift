@@ -34,7 +34,7 @@ def main(first_filename, second_filename, start_beat, shift_length, second_start
     beat_count = 0
 
     audiofile1 = audio.LocalAudioFile(first_filename)
-    beats1 = audiofile1.analysis.beats
+    beats1 = audiofile1.analysis.segments
     collect = []
 
     while (beat_count < start_beat + shift_length and beat_count < len(beats1)):
@@ -53,7 +53,7 @@ def main(first_filename, second_filename, start_beat, shift_length, second_start
     beat_count = second_start
 
     audiofile2 = audio.LocalAudioFile(second_filename)
-    beats2 = audiofile2.analysis.beats
+    beats2 = audiofile2.analysis.segments
 
     while (beat_count < len(beats2)):
         beat_audio = beats2[beat_count].render()

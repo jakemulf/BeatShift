@@ -27,7 +27,7 @@ def main(input_filename, start_beat, shift_length, shift_magnitude, output_filen
     beat_count = 0
 
     audiofile = audio.LocalAudioFile(input_filename)
-    beats = audiofile.analysis.beats
+    beats = audiofile.analysis.segments
     collect = []
 
     for beat in beats:
